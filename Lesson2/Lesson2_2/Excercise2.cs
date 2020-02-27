@@ -10,10 +10,20 @@ namespace Lesson2_2
         {
             Console.WriteLine("Введите число: ");
             string input = Console.ReadLine();
-            Console.WriteLine($"Количество цифр в этом числе = {input.Length}");
+            Console.WriteLine($"Количество цифр в этом числе = {GetCountOfDigits(input)}");
 
             Console.ReadKey();
         }
-        
+
+        private static int GetCountOfDigits(string input)
+        {
+            int count = 0;
+            foreach(char i in input)
+            {
+                if (char.IsDigit(i))
+                    count++;
+            }
+            return count;
+        }
     }
 }
